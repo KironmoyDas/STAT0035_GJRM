@@ -41,6 +41,12 @@ if(BivD == "PL"){
   if(dim(as.matrix(theta))[2] > 1)  tau <- matrix(tau, nrow = dim(theta)[1], ncol = dim(theta)[2] )  
 }
 
+if(BivD == "GA"){
+  if(length(theta)==1)   tau <- as.numeric(tau(galambosCopula(theta)))   
+  if(length(theta) > 1){ tau <- NA; for(i in 1:length(theta)) tau[i] <- as.numeric(tau(galambosCopula(theta[i])))   }
+  if(dim(as.matrix(theta))[2] > 1)  tau <- matrix(tau, nrow = dim(theta)[1], ncol = dim(theta)[2] )  
+}
+
 tau.a   <- mean(tau) 
 theta.a <- mean(theta) 
 

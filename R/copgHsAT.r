@@ -34,6 +34,15 @@ if(Ln == FALSE){
 
 
 
+if(BivD == "GA"){
+
+GA <- expression(p1*p2*exp(((-log(p1))^(-teta)+(-log(p1))^(-teta))^(-1/teta)))
+
+c.copula.be2 <- D(GA, "p2")
+
+}  
+  
+  
 
 
 if(BivD == "PL"){
@@ -145,6 +154,16 @@ if(Ln == TRUE){
 
 
 
+if(BivD == "GA"){
+    
+GA <- expression(p1*p2*exp(((-log(p1))^(-teta)+(-log(p1))^(-teta))^(-1/teta)))
+    
+c.copula2.be1be2 <- D(D(GA, "p2"), "p1")
+    
+}
+  
+  
+  
 
 
 if(BivD == "HO"){
