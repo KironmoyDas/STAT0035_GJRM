@@ -41,7 +41,7 @@ der2teta.derteta.stteta.st <- -((1 - 2 * (exp(-teta.st)/(1 + exp(-teta.st)))) * 
    
    
 
-if(BivD %in% c("C0", "C180","J0", "J180","G0", "G180", "PL") ) derteta.derteta.st <- der2teta.derteta.stteta.st <-  exp(teta.st) 
+if(BivD %in% c("C0", "C180","J0", "J180","G0", "G180", "PL", "GA") ) derteta.derteta.st <- der2teta.derteta.stteta.st <-  exp(teta.st) 
 if(BivD %in% c("C90","C270","J90","J270","G90","G270") )       derteta.derteta.st <- der2teta.derteta.stteta.st <- -exp(teta.st)  
 
   
@@ -72,6 +72,49 @@ teta <- -teta
 ########################################################################################   
 ########################################################################################
      
+
+if(BivD == "GA"){
+  
+  GA <- expression(p1*p2*exp(((-log(p1))^(-teta)+(-log(p1))^(-teta))^(-1/teta)))
+  GApdf <- D(D(GA, "p2"), "p1")
+  GAh <- D(GA, "p2")
+  
+  der2h.derp2teta <-  NA
+  
+  der3C.p1p1teta <- NA
+  
+  der2h.derp2p2 <- NA
+  
+  der3C.derp1p1p1 <- NA
+  
+  der2h.derteta.teta.st <- NA
+    
+  der3C.derp1tetateta <- NA
+  
+  der2h.derp1p2 <- D(D(GAh, "p1"), "p2")
+  
+  der2h.derp1teta <- D(D(GAh, "p1"), "teta")
+  
+  der2h.derp1p1 <- D(D(GAh, "p1"), "p1")
+  
+  if(Cont == TRUE){
+    
+    der2c.derrho.derrho <- D(D(GApdf, "teta"), "teta")
+    
+    der2c.derp1.derp1 <- D(D(GApdf, "p1"), "p1")
+    
+    der2c.derp2.derp2 <- D(D(GApdf, "p2"), "p2")
+    
+    der2c.derp1.derp2 <- D(D(GApdf, "p1"), "p2")
+    
+    der2c.derp1.derrho <- D(D(GApdf, "p1"), "teta")
+    
+    der2c.derp2.derrho <- D(D(GApdf, "p2"), "teta")
+    
+  }
+
+
+
 
 
 if(BivD %in% c("HO")){
