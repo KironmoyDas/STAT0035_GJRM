@@ -6,7 +6,7 @@ eps <- sqrt(.Machine$double.eps) # this looks fine here and it is not that dange
 if(BivD %in% scc)  ass.s <-  abs(ass.s)   
 if(BivD %in% sccn) ass.s <- -abs(ass.s) 
 
-if(!(BivD %in% c("AMH","FGM","PL","HO"))) i.rho <- BiCopTau2Par(family = nCa, tau = ass.s)
+if(!(BivD %in% c("AMH","FGM","PL","HO","GA"))) i.rho <- BiCopTau2Par(family = nCa, tau = ass.s)
 if(  BivD %in% c("AMH","FGM") )           i.rho <- BiCopTau2Par(family = 1,   tau = ass.s)
 
 if(  BivD %in% c("PL") )                  i.rho <- as.numeric(iTau(plackettCopula(), ass.s))
