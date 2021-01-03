@@ -91,25 +91,25 @@ if(BivD == "GA"){
     
   der3C.derp1tetateta <- NA
   
-  der2h.derp1p2 <- D(D(GAh, "p1"), "p2")
+  der2h.derp1p2 <- eval(D(D(GAh, "p1"), "p2"))
   
-  der2h.derp1teta <- D(D(GAh, "p1"), "teta")
+  der2h.derp1teta <- eval(D(D(GAh, "p1"), "teta"))
   
-  der2h.derp1p1 <- D(D(GAh, "p1"), "p1")
+  der2h.derp1p1 <- eval(D(D(GAh, "p1"), "p1"))
   
   if(Cont == TRUE){
     
-    der2c.derrho.derrho <- D(D(GApdf, "teta"), "teta")
+    der2c.derrho.derrho <- eval(D(D(GApdf, "teta"), "teta"))
     
-    der2c.derp1.derp1 <- D(D(GApdf, "p1"), "p1")
+    der2c.derp1.derp1 <- eval(D(D(GApdf, "p1"), "p1"))
     
-    der2c.derp2.derp2 <- D(D(GApdf, "p2"), "p2")
+    der2c.derp2.derp2 <- eval(D(D(GApdf, "p2"), "p2"))
     
-    der2c.derp1.derp2 <- D(D(GApdf, "p1"), "p2")
+    der2c.derp1.derp2 <- eval(D(D(GApdf, "p1"), "p2"))
     
-    der2c.derp1.derrho <- D(D(GApdf, "p1"), "teta")
+    der2c.derp1.derrho <- eval(D(D(GApdf, "p1"), "teta"))
     
-    der2c.derp2.derrho <- D(D(GApdf, "p2"), "teta")
+    der2c.derp2.derrho <- eval(D(D(GApdf, "p2"), "teta"))
     
   }
 
