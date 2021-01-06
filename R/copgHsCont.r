@@ -41,7 +41,7 @@ der2teta.derteta.stteta.st <- -((1 - 2 * (exp(-teta.st)/(1 + exp(-teta.st)))) * 
    
    
 
-if(BivD %in% c("C0", "C180","J0", "J180","G0", "G180", "PL", "GA") ) derteta.derteta.st <- der2teta.derteta.stteta.st <-  exp(teta.st) 
+if(BivD %in% c("C0", "C180","J0", "J180","G0", "G180", "PL", "GAL") ) derteta.derteta.st <- der2teta.derteta.stteta.st <-  exp(teta.st) 
 if(BivD %in% c("C90","C270","J90","J270","G90","G270") )       derteta.derteta.st <- der2teta.derteta.stteta.st <- -exp(teta.st)  
 
   
@@ -73,11 +73,11 @@ teta <- -teta
 ########################################################################################
      
 
-if(BivD == "GA"){
+if(BivD == "GAL"){
   
-  GA <- expression(p1*p2*exp(((-log(p1))^(-teta)+(-log(p1))^(-teta))^(-1/teta)))
-  GApdf <- D(D(GA, "p2"), "p1")
-  GAh <- D(GA, "p2")
+  GAL <- expression(p1*p2*exp(((-log(p1))^(-teta)+(-log(p1))^(-teta))^(-1/teta)))
+  GALpdf <- D(D(GAL, "p2"), "p1")
+  GALh <- D(GAL, "p2")
   
   der2h.derp2teta <-  NA
   
@@ -91,25 +91,25 @@ if(BivD == "GA"){
     
   der3C.derp1tetateta <- NA
   
-  der2h.derp1p2 <- eval(D(D(GAh, "p1"), "p2"))
+  der2h.derp1p2 <- eval(D(D(GALh, "p1"), "p2"))
   
-  der2h.derp1teta <- eval(D(D(GAh, "p1"), "teta"))
+  der2h.derp1teta <- eval(D(D(GALh, "p1"), "teta"))
   
-  der2h.derp1p1 <- eval(D(D(GAh, "p1"), "p1"))
+  der2h.derp1p1 <- eval(D(D(GALh, "p1"), "p1"))
   
   if(Cont == TRUE){
     
-    der2c.derrho.derrho <- eval(D(D(GApdf, "teta"), "teta"))
+    der2c.derrho.derrho <- eval(D(D(GALpdf, "teta"), "teta"))
     
-    der2c.derp1.derp1 <- eval(D(D(GApdf, "p1"), "p1"))
+    der2c.derp1.derp1 <- eval(D(D(GALpdf, "p1"), "p1"))
     
-    der2c.derp2.derp2 <- eval(D(D(GApdf, "p2"), "p2"))
+    der2c.derp2.derp2 <- eval(D(D(GALpdf, "p2"), "p2"))
     
-    der2c.derp1.derp2 <- eval(D(D(GApdf, "p1"), "p2"))
+    der2c.derp1.derp2 <- eval(D(D(GALpdf, "p1"), "p2"))
     
-    der2c.derp1.derrho <- eval(D(D(GApdf, "p1"), "teta"))
+    der2c.derp1.derrho <- eval(D(D(GALpdf, "p1"), "teta"))
     
-    der2c.derp2.derrho <- eval(D(D(GApdf, "p2"), "teta"))
+    der2c.derp2.derrho <- eval(D(D(GALpdf, "p2"), "teta"))
     
   }
 

@@ -34,11 +34,11 @@ if(Ln == FALSE){
 
 
 
-if(BivD == "GA"){
+if(BivD == "GAL"){
 
-GA <- expression(p1*p2*exp(((-log(p1))^(-teta)+(-log(p1))^(-teta))^(-1/teta)))
+GAL <- expression(p1*p2*exp(((-log(p1))^(-teta)+(-log(p1))^(-teta))^(-1/teta)))
 
-c.copula.be2 <- eval(D(GA, "p2"))
+c.copula.be2 <- eval(D(GAL, "p2"))
 
 }  
   
@@ -154,11 +154,11 @@ if(Ln == TRUE){
 
 
 
-if(BivD == "GA"){
+if(BivD == "GAL"){
     
-GA <- expression(p1*p2*exp(((-log(p1))^(-teta)+(-log(p1))^(-teta))^(-1/teta)))
+GAL <- expression(p1*p2*exp(((-log(p1))^(-teta)+(-log(p1))^(-teta))^(-1/teta)))
     
-c.copula2.be1be2 <- eval(D(D(GA, "p2"), "p1"))
+c.copula2.be1be2 <- eval(D(D(GAL, "p2"), "p1"))
     
 }
   
