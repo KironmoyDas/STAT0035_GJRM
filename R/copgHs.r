@@ -8,7 +8,7 @@ copgHs <- function(p1, p2, eta1 = NULL, eta2 = NULL, teta, teta.st, BivD, nu = N
 c.copula.dof.st <- c.copula2.be1dof.st <- c.copula2.be2dof.st <- c.copula2.dof2.st <- c.copula2.thdof.st <- 1
 
 
-cjg <- c("C0","J0","G0","C90","J90","G90","C180","J180","G180","C270","J270","G270","PL")
+cjg <- c("C0","J0","G0","C90","J90","G90","C180","J180","G180","C270","J270","G270","PL","GAL")
 
 if(BivD %in% cjg) {
 
@@ -69,6 +69,33 @@ teta <- -teta
    
 ########################################################################################   
 ########################################################################################
+
+
+
+if(BivD=="GAL"){
+  
+  GAL <- expression(p1*p2*exp(((-log(p1))^(-teta)+(-log(p1))^(-teta))^(-1/teta)))
+  
+  c.copula.be1 <- eval(D(GAL, "p1"))
+    
+  c.copula.be2 <- eval(D(GAL, "p2"))
+    
+  c.copula.thet <- eval(D(GAL, "teta"))
+    
+  c.copula2.be1 <-eval(D(D(GAL, "p1"), "p1"))
+    
+  c.copula2.be2 <- eval(D(D(GAL, "p2"), "p2"))
+    
+  c.copula2.be1be2 <- eval(D(D(GAL, "p1"), "p2"))
+    
+  c.copula2.be1t <- eval(D(D(GAL, "p1"), "teta"))
+    
+  c.copula2.be2t <- eval(D(D(GAL, "p2"), "teta"))
+    
+  bit1.th2ATE <- eval(D(D(GAL, "teta"), "teta"))
+  
+}
+
 
 
 if(BivD=="HO"){

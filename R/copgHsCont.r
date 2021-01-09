@@ -79,17 +79,17 @@ if(BivD == "GAL"){
   GALpdf <- D(D(GAL, "p2"), "p1")
   GALh <- D(GAL, "p2")
   
-  der2h.derp2teta <-  NA
+  der2h.derp2teta <-  eval(D(D(GALh ,"p2"), "teta"))
   
-  der3C.p1p1teta <- NA
+  der3C.p1p1teta <- eval(D(D(D(GAL, "p1"), "p1"), "teta"))
   
-  der2h.derp2p2 <- NA
+  der2h.derp2p2 <- eval(D(D(GALh ,"p2"), "p2"))
   
-  der3C.derp1p1p1 <- NA
+  der3C.derp1p1p1 <- eval(D(D(D(GAL, "p1"), "p1"), "p1"))
   
-  der2h.derteta.teta.st <- NA
+  der2h.derteta.teta.st <- eval(D(D(GALh ,"teta"), "teta"))
     
-  der3C.derp1tetateta <- NA
+  der3C.derp1tetateta <- eval(D(D(D(GAL, "p1"), "teta"), "teta"))
   
   der2h.derp1p2 <- eval(D(D(GALh, "p1"), "p2"))
   

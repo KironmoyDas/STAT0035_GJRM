@@ -26,8 +26,15 @@ teta <- -teta
 ########################################################################################
 
 
+if(BivD=="GAL"){
+  
+GAL <- expression(p1*p2*exp(((-log(p1))^(-teta)+(-log(p1))^(-teta))^(-1/teta)))
 
+c.copula.be2 <- D(GAL, "p2")
+    
+}
 
+  
 
 if(BivD=="HO"){
 
