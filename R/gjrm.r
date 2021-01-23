@@ -135,8 +135,8 @@ gjrm <- function(formula, data = list(), weights = NULL, subset = NULL,
              "J0J90","J0J270","J180J90","J180J270",
              "G0G90","G0G270","G180G90","G180G270")
              
-  opc  <- c("N","C0","C90","C180","C270","J0","J90","J180","J270","G0","G90","G180","G270","F","AMH","FGM","T","PL","HO")
-  scc  <- c("C0", "C180", "J0", "J180", "G0", "G180", BivD2)
+  opc  <- c("N","C0","C90","C180","C270","J0","J90","J180","J270","G0","G90","G180","G270","F","AMH","FGM","T","PL","HO","GAL")
+  scc  <- c("C0", "C180", "J0", "J180", "G0", "G180", BivD2, "GAL")
   sccn <- c("C90", "C270", "J90", "J270", "G90", "G270")
   m2   <- c("N","GU","rGU","LO","LN","WEI","iG","GA","BE","FISK","GP","GPII","GPo")
   m3   <- c("DAGUM","SM","TW")
@@ -144,8 +144,8 @@ gjrm <- function(formula, data = list(), weights = NULL, subset = NULL,
   m2d  <- c("NBI", "NBII","PIG","DGP","DGPII")
   m3d  <- c("DEL","SICHEL")
   
-  ct  <- data.frame( c(opc), c(1:14,55,56,57,60,61) )
-  cta <- data.frame( c(opc), c(1,3,23,13,33,6,26,16,36,4,24,14,34,5,55,56,2,60,61) )     
+  ct  <- data.frame( c(opc), c(1:14,55,56,57,60,61,62) )
+  cta <- data.frame( c(opc), c(1,3,23,13,33,6,26,16,36,4,24,14,34,5,55,56,2,60,61,62) )     
   
   
   if(BivD %in% BivD2){

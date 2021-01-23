@@ -33,7 +33,13 @@ teta <- -teta
 if(Ln == FALSE){
 
 
-
+if(BivD == "GAL"){
+  
+  c.copula.be2 <- p1 * (1 - 1/((-log(p2))^(1 + teta) * (1/(-log(p1))^teta + 
+                  1/(-log(p2))^teta)^(1 + 1/teta))) * exp((1/(-log(p1))^teta + 
+                  1/(-log(p2))^teta)^-(1/teta))
+    
+}
 
 
 if(BivD == "PL"){
@@ -145,6 +151,20 @@ if(Ln == TRUE){
 
 
 
+if(BivD == "GAL"){
+    
+c.copula2.be1be2 <- (1 + teta * (-log(p2))^(1 + teta) * (1 + 1/teta) * 
+    (1/(-log(p1))^teta + 1/(-log(p2))^teta)^(1/teta)/((-log(p1))^(1 + 
+    teta) * ((-log(p2))^(1 + teta) * (1/(-log(p1))^teta + 1/(-log(p2))^teta)^(1 + 
+    1/teta))^2) - ((1 - 1/((-log(p2))^(1 + teta) * (1/(-log(p1))^teta + 
+    1/(-log(p2))^teta)^(1 + 1/teta)))/((-log(p1))^(1 + teta) * 
+    (1/(-log(p1))^teta + 1/(-log(p2))^teta)^(1 + 1/teta)) + 1/((-log(p2))^(1 + 
+    teta) * (1/(-log(p1))^teta + 1/(-log(p2))^teta)^(1 + 1/teta)))) * 
+    exp((1/(-log(p1))^teta + 1/(-log(p2))^teta)^-(1/teta))
+    
+}
+  
+  
 
 
 if(BivD == "HO"){
