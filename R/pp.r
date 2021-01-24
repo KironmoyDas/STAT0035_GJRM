@@ -14,7 +14,8 @@ if(x$univar.gamlss == TRUE) x$BivD <- "N"
   
   if(x$BivD=="PL")   {cop <- "Plackett"           ;lind <- "log"}
   if(x$BivD=="HO")   {cop <- "Hougaard"           ;lind <- "qlogis"} 
-  
+  if(x$BivD=="GAL")  {cop <- "Galambos"           ;lind <- "log"}
+   
   if(x$BivD=="C0")   {cop <- "Clayton"            ;lind <- "log"}   
   if(x$BivD=="C90")  {cop <- "90\u00B0 Clayton"   ;lind <- "log(- \u00B7)"}                 
   if(x$BivD=="C180") {cop <- "180\u00B0 Clayton"  ;lind <- "log"}                    

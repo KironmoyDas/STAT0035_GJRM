@@ -25,6 +25,20 @@ teta <- -teta
 ########################################################################################
 
 
+if(BivD=="GAL"){
+    
+c.copula.be1<-p2*(1-1/((-log(p1))^(1+teta)*(1/(-log(p1))^teta+
+1/(-log(p2))^teta)^(1+1/teta)))*exp((1/(-log(p1))^teta+
+1/(-log(p2))^teta)^-(1/teta))
+
+c.copula.be2<-p1*(1-1/((-log(p2))^(1+teta)*(1/(-log(p1))^teta+
+1/(-log(p2))^teta)^(1+1/teta)))*exp((1/(-log(p1))^teta+
+1/(-log(p2))^teta)^-(1/teta))
+
+}
+  
+  
+
 if(BivD=="HO"){
 
 

@@ -13,7 +13,8 @@ if(test == TRUE){
 
 
     if(  family == 61  && (any( par1 <= 0 ) || any( par1 >= 1 )) )  stop("The parameter of Hougaard must be in (0,1).")
-    
+    if(  family == 62  && any(par1 <= 0) )  stop("The parameter of Galambos must be positive.")
+  
     if(  family == 1  && any( abs(par1) >= 1) )  stop("The parameter of Gaussian must be in (-1,1).")
     if(  family == 55 && any( abs(par1) >= 1) )  stop("The parameter of AMH must be in (-1,1).")
     if(  family == 56 && any( abs(par1) >= 1) )  stop("The parameter of FGM must be in (-1,1).")
