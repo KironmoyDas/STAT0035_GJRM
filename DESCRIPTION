@@ -1,9 +1,9 @@
-Package: STAT0035GJRM
-Version: 0.0
-Author: Kironmoy Das <kiron.das.17@ucl.ac.uk>
-Maintainer: Kironmoy Das <kiron.das.17@ucl.ac.uk>
-Title: GJRM Extention
-Description: GJRM Extention
+Package: GJRMgal
+Version: 0.2-3
+Author: Giampiero Marra <giampiero.marra@ucl.ac.uk> and Rosalba Radice <rosalba.radice@city.ac.uk>
+Maintainer: Giampiero Marra <giampiero.marra@ucl.ac.uk>
+Title: Generalised Joint Regression Modelling
+Description: Routines for fitting various joint (and univariate) regression models, with several types of covariate effects, in the presence of equations' errors association, endogeneity, non-random sample selection or partial observability.
 Depends: R (>= 3.2.1), mgcv
 Imports: magic, matrixcalc, VGAM, survey, trust, VineCopula, graphics,
         stats, utils, grDevices, ggplot2, matrixStats, mnormt,
@@ -12,3 +12,8 @@ Imports: magic, matrixcalc, VGAM, survey, trust, VineCopula, graphics,
 Enhances: sp
 LazyLoad: yes
 License: GPL (>= 2)
+URL: https://www.ucl.ac.uk/statistics/people/giampieromarra
+Repository: CRAN
+Date/Publication: 2020-09-07 18:20:03 UTC
+NeedsCompilation: no
+Packaged: 2020-09-07 16:09:41 UTC; GM
