@@ -30,7 +30,7 @@ if(test == TRUE){
 
     if(family == 57)                          res <- BiCopCDF(u1, u2, family = 2, par = par1, par2 = par2)
     if(family == 1)                           res <- pbinorm( qnorm(u1), qnorm(u2), cov12 = par1)
-    if(family %in% c(2,6,10,14,55,56,60,61))  res <- BCDF(u1, u2, family, par1)                            # 0
+    if(family %in% c(2,6,10,14,55,56,60,61,62))  res <- BCDF(u1, u2, family, par1)                            # 0
     if(family %in% c(4,8,12))                 res <- u1 + u2 - 1 + BCDF(1 - u1, 1 - u2, family, par1)      # 180
     if(family %in% c(3,7,11))                 res <- u2 - BCDF(1 - u1, u2, family, -par1)                  # 90
     if(family %in% c(5,9,13))                 res <- u1 - BCDF(u1, 1 - u2, family, -par1)                  # 270
