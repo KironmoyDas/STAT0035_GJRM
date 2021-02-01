@@ -36,7 +36,7 @@ if(family == 60){
 if(family == 61) res <- exp( -( (-log(u1))^(1/par1) + (-log(u2))^(1/par1)   )^par1   )
                                 
 
-if(family == 62) res <- u1*u2*exp(((-log(u1))^(-par1)+(-log(u2))^(-par1))^(-1/teta))  # Galambos   
+if(family == 62) res <- u1*u2*exp(((-log(u1))^(-par1)+(-log(u2))^(-par1))^(-1/par1))  # Galambos   
             
 
 res
